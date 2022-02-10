@@ -1,0 +1,27 @@
+npx react-native init moviesApp
+npx react-native run-ios
+
+API= https://api.themoviedb.org/3/movie/550?api_key=d147926958e534ba885219d2a1d57c4f
+API key= d147926958e534ba885219d2a1d57c4f
+final link of api-->  https://api.themoviedb.org/3/movie/popular?api_key=d147926958e534ba885219d2a1d57c4f&language=en-US&page=1
+
+I promise you to give you data once i get them
+dev tool in android- ctrl + m
+dev tool in ios - ctrl + d
+----------------------------
+npm install axios@0.21.1
+npm i react-native-image-slider-box
+
+RN navigation setup
+--------------------
+npm install @react-navigation/native
+npm install react-native-screens react-native-safe-area-context
+npm install @react-navigation/native-stack
+
+react-native start --reset-cache
+-------------------------------------------
+npm i react-native-star-rating
+npm install --save react-native-vector-icons
+react-native link react-native-vector-icons
+npm i dateformat --save
+npm install --save react-native-video react-native-video-controls
