@@ -7,7 +7,7 @@ export class PlayButton extends PureComponent {
     const {handlePress} = this.props;
     return (
       <Pressable onPress={() => handlePress()} style={styles.button}>
-        <Icon name={'caret-forward-circle-outline'} size={30} color={'#fff'} />
+        <Icon name={'caret-forward-circle-outline'} size={40} color={'#fff'} />
       </Pressable>
     );
   }
@@ -17,9 +17,9 @@ const styles = StyleSheet.create({
   button: {
     alignContent: 'center',
     borderRadius: 50,
-    width: 50,
+    width: 60,
     padding: 10,
-    backgroundColor: '#4481FC',
+    backgroundColor: 'green',
   },
 });
 export default PlayButton;

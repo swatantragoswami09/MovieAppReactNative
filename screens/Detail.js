@@ -15,9 +15,11 @@ import StarRating from 'react-native-star-rating';
 import dateFormat from 'dateformat';
 import PlayButton from '../components/PlayButton';
 // import Video from 'react-native-video';
+import {WebView} from 'react-native-webview';
 
 const placeholderImage = require('../assets/images/placeholder.png');
 const height = Dimensions.get('screen').height;
+const width = Dimensions.get('screen').width;
 
 const Detail = ({route, navigation}) => {
   const movieId = route.params.movieId;
@@ -26,6 +28,7 @@ const Detail = ({route, navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
+    console.log(movieId);
     getMovie(movieId).then(movieData => {
       setMovieDetail(movieData);
       setLoaded(true);
@@ -85,7 +88,23 @@ const Detail = ({route, navigation}) => {
           </ScrollView>
           <Modal animationType="slide" visible={modalVisible}>
             <View style={styles.videoModal}>
-              {/* <Video source={{uri: 'https://vjs.zencdn.net/v/oceans.mp4'}} /> */}
+              <WebView
+                onB
+                mediaPlaybackRequiresUserAction={true}
+                androidLayerType="hardware"
+                mixedContentMode="always"
+                allowsBackForwardNavigationGestures={true}
+                automaticallyAdjustContentInsets
+                allowsFullscreenVideo={true}
+                style={{
+                  height: height,
+                  width: width,
+                  alignSelf: 'center',
+                  alignContent: 'center',
+                }}
+                javaScriptEnabled={true}
+                source={{uri: 'https://vjs.zencdn.net/v/oceans.mp4'}}
+              />
             </View>
           </Modal>
         </View>
@@ -130,7 +149,7 @@ const styles = StyleSheet.create({
   },
   playButton: {
     position: 'absolute',
-    top: -25,
+    top: -40,
     right: 20,
   },
   videoModal: {
